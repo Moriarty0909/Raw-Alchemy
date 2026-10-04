@@ -8,10 +8,9 @@ jobs:
     name: Build macOS Intel x64
     runs-on: macos-15-intel
     steps:
-      - name: Check out studio-v0.5.0 tag
-        uses: actions/checkout@v4
-        with:
-          ref: 'studio-v0.5.0'
+      - name: Clone source
+        run: |
+          git clone --depth 1 --branch studio-v0.5.0 https://github.com/shenmintao/Raw-Alchemy.git .
 
       - name: Set up Python
         uses: actions/setup-python@v5
